@@ -1,4 +1,4 @@
-package com.example.SpringJDBCPractice;
+package com.example.ProjectCC;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>회원가입</title>
+    </head>
+    <body>
+        <form action="/join" method="post" name="join" onsubmit="return check()">
+            <input type="text" class="name" name="name" placeholder="사용자 이름" required>
+            <input type="text" class="id" name="id" placeholder="ID" required>
+            <input type="password" class="pw" name="pw" placeholder="비밀번호" required>
+            <button>회원가입</button>
+        </form>
+        <script src="/js/join.js"></script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인</title>
+    </head>
+    <body>
+        <h1>로그인</h1>
+        <form action="/home" method="post" name="login" onsubmit="return check()">
+            <input type="text" class="id" name="id" placeholder="ID" required/>
+            <input type="password" class="pw" name="pw" placeholder="비밀번호" required/>
+            <button class="loginBtn">로그인</button>
+        </form>
+        <script src="/js/login.js"></script>
+    </body>
+</html>
