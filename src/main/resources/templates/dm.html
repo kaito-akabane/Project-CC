@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>YJCC</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>DM</title>
         <link href="/styles/main.css" rel="stylesheet" type="text/css">
         <link href="/styles/home.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <!-- <h1 th:text="|${session.login_user.get().getName()}님, 환영합니다!|"></h1> -->
         <header>
             <div class="logo box">
                 <img src="/img/logo.png">
@@ -33,24 +31,6 @@
                 </div>
             </div>
         </header>
-        <content>
-            <article>
-                <div class="something"></div>
-            </article>
-            <aside>
-                <div class="profile">
-                    <div class="propic-box">
-                        <img src="/img/pic.png" class="propic">
-                    </div>
-                    <div class="id_n_name">
-                        <div class="my_id" th:text="${session.login_user.get().getId()}">java_is_my_life</div>
-                        <span class="my_name" th:text="${session.login_user.get().getName()}">Hansae Kang</span>
-                    </div>
-                    <div class="logout">
-                        <a href="logout">로그아웃</a>
-                    </div>
-                </div>
-            </aside>
-        </content>
+       <h1>DM 를! 할거란다!</h1>
     </body>
 </html>
