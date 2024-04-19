@@ -3,14 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>회원가입</title>
+        <link href="/styles/main.css" rel="stylesheet" type="text/css">
+        <link href="/styles/join.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <form action="/join" method="post" name="join" onsubmit="return check()">
-            <input type="text" class="name" name="name" placeholder="사용자 이름" required>
-            <input type="text" class="id" name="id" placeholder="ID" required>
-            <input type="password" class="pw" name="pw" placeholder="비밀번호" required>
-            <button>회원가입</button>
-        </form>
+        <div class="main-container">
+            <div class="join">
+                <img class="logo" src="/img/logo.png">
+                <!-- <span>회원가입</span> -->
+                <form action="/join" method="post" name="join" onsubmit="return check()">
+                    <div id="id">
+                        <input type="text" class="id" name="id" placeholder="ID" required> @g.yju.ac.kr
+                    </div>
+                    <input type="password" class="pw" name="pw" placeholder="비밀번호" required>
+                    <input type="password" class="pw2" placeholder="비밀번호 확인" required>
+                    <input type="text" class="name" name="name" placeholder="사용자 이름" required>
+                    <button class="confirmBtn">회원가입</button>
+                </form>
+            </div>
+            <div class="login"><p>계정이 있으신가요? <a href="/login">로그인</a></p></div>
+        </div>
         <script src="/js/join.js"></script>
     </body>
 </html>

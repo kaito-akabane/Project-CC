@@ -9,15 +9,21 @@
 // });
 
 function check() {
-    const id = document.querySelector(".id");
+    // const id = document.querySelector(".id");
     const pw = document.querySelector(".pw");
-    if(id.value==="") {
-        alert("ID를 입력해주세요.");
-        id.focus();
+    const pw2 = document.querySelector(".pw2");
+    // if(id.value==="") {
+    //     alert("ID를 입력해주세요.");
+    //     id.focus();
+    //     return false;
+    // }
+    if(pw.value.length < 4 && pw.value.length > 20) {
+        alert("4자 이상 20자 이하의 비밀번호를 입력해주세요.");
+        pw.focus();
         return false;
     }
-    else if(pw.value==="") {
-        alert("PW를 입력해주세요.");
+    else if(pw.value!==pw2.value) {
+        alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
         pw.focus();
         return false;
     }

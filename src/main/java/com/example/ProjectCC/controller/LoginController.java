@@ -41,6 +41,12 @@ public class LoginController {
         return null;
     }
     
+    @GetMapping("logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/home";
+    }
+    
     @Autowired
     UserRepository repository;
 }

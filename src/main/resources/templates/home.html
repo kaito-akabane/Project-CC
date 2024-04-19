@@ -3,8 +3,52 @@
     <head>
         <meta charset="UTF-8">
         <title>YJCC</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="/styles/main.css" rel="stylesheet" type="text/css">
+        <link href="/styles/home.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1 th:text="|${session.login_user.get().getName()}님, 환영합니다!|"></h1>
+        <!-- <h1 th:text="|${session.login_user.get().getName()}님, 환영합니다!|"></h1> -->
+        <header>
+            <div class="logo box">
+                <img src="/img/logo.png">
+            </div>
+            <div class="search box">
+                <input type="search" class="search" placeholder="검색">
+            </div>
+            <div class="button-box">
+                <div class="home">
+                    <svg aria-label="홈" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>홈</title><path d="M22 23h-6.001a1 1 0 0 1-1-1v-5.455a2.997 2.997 0 1 0-5.993 0V22a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V11.543a1.002 1.002 0 0 1 .31-.724l10-9.543a1.001 1.001 0 0 1 1.38 0l10 9.543a1.002 1.002 0 0 1 .31.724V22a1 1 0 0 1-1 1Z"></path></svg>
+                </div>
+                <div class="dm">
+                    <img src="/img/dm.png" width="22px" height="22px">
+                </div>
+                <div class="nav">
+                    <img src="/img/nav.png" width="22px" height="22px">
+                </div>
+                <div class="nav">
+                    <img src="/img/profile.png" width="22px" height="22px">
+                </div>
+            </div>
+        </header>
+        <content>
+            <article>
+                <div class="something"></div>
+            </article>
+            <aside>
+                <div class="profile">
+                    <div class="propic-box">
+                        <img src="/img/pic.png" class="propic">
+                    </div>
+                    <div class="id_n_name">
+                        <div class="my_id">java_is_my_life</div>
+                        <span class="my_name">Hansae Kang</span>
+                    </div>
+                    <div class="logout">
+                        <a href="logout">로그아웃</a>
+                    </div>
+                </div>
+            </aside>
+        </content>
     </body>
 </html>

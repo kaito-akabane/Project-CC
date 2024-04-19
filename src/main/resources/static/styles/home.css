@@ -1,0 +1,105 @@
+header {
+    width: 100%;
+    height: 54px;
+    padding: 0 20% 0 20%;
+    border-bottom: solid 1px #dbdbdb;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo img {
+    width: 160px;
+}
+
+input.search {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    width: 215px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+}
+
+input.search::-webkit-input-placeholder{
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
+    background-size: contain;
+    background-position: 65px center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-indent: 0;
+}
+
+.button-box {
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+content {
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.something {
+    width: 600px;
+    height: 800px;
+    border: 1px solid #dbdbdb;
+    /* background-color: white; */
+    border-radius: 3px;
+}
+
+aside {
+    padding: 30px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.propic-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    /* border: 1px solid gray; */
+    border-radius: 50%;
+    background-size: contain;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+img.propic {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.id_n_name {
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.my_name {
+    color: gray;
+}
+
+.logout {
+    margin-left: 10px;
+}
