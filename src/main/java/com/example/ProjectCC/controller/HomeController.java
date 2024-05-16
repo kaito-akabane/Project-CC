@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-    
+
     @GetMapping(value = {"/", "home"})
     public String mainPage(HttpServletRequest request, Model model, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession(false);

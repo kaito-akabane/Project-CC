@@ -1,30 +1,39 @@
 package com.example.ProjectCC.controller;
 
+import com.example.ProjectCC.dto.RegisterDto;
 import com.example.ProjectCC.entity.User;
-import com.example.ProjectCC.repository.UserRepository;
+import com.example.ProjectCC.service.UserService;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
-public class JoinController {
+public class RegisterController {
+    private final UserService userService;
+    
+    @Autowired
+    public RegisterController(UserService userService) {
+        this.userService = userService;
+    }
+    
     @GetMapping("join")
     public String joinForm() {
         return "join";
     }
     
-    @PostMapping("join")
-    public String joinUser(User user, HttpServletResponse response) throws IOException {
-        Optional<User> userId = repository.findById(user.getId());
-        if(userId.isEmpty()) {
-            repository.save(user);
-            return "login";
+    @PostMapping("/join")
+    public String join(RegisterDto registerDto, HttpServletResponse response) throws IOException {
+        User username = userService.findByUsername(registerDto.getUsername());
+        if(username==null) {
+            userService.register(registerDto);
+            return "redirect:/login";
         }
+        
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
@@ -32,7 +41,4 @@ public class JoinController {
         out.close();
         return null;
     }
-    
-    @Autowired
-    UserRepository repository;
 }

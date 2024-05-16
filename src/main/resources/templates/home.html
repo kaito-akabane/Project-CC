@@ -43,8 +43,8 @@
                         <img src="/img/pic.png" class="propic">
                     </div>
                     <div class="id_n_name">
-                        <div class="my_id" th:text="${session.login_user.get().getId()}">java_is_my_life</div>
-                        <span class="my_name" th:text="${session.login_user.get().getName()}">Hansae Kang</span>
+                        <div class="my_id" th:text="${session.login_user.getUsername()}">java_is_my_life</div>
+                        <span class="my_name" th:text="${session.login_user.getName()}">Hansae Kang</span>
                     </div>
                     <div class="logout">
                         <a href="logout">로그아웃</a>
