@@ -1,7 +1,6 @@
 package com.example.ProjectCC.controller;
 
 import com.example.ProjectCC.dto.RegisterDto;
-import com.example.ProjectCC.entity.User;
 import com.example.ProjectCC.service.UserService;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -27,17 +26,15 @@ public class RegisterController {
     
     @PostMapping("/join")
     public String join(RegisterDto registerDto, HttpServletResponse response) throws IOException {
-        User username = userService.findByUsername(registerDto.getUsername());
-        if(username==null) {
-            userService.register(registerDto);
+        if(userService.register(registerDto))
             return "redirect:/login";
+        else {
+            response.setCharacterEncoding("utf-8");
+            response.setContentType("text/html; charset=utf-8");
+            PrintWriter out = response.getWriter();
+            out.println("<script> alert('해당 ID는 이미 존재합니다.'); history.go(-1); </script>");
+            out.close();
+            return null;
         }
-        
-        response.setCharacterEncoding("utf-8");
-        response.setContentType("text/html; charset=utf-8");
-        PrintWriter out = response.getWriter();
-        out.println("<script> alert('해당 ID는 이미 존재합니다.'); history.go(-1); </script>");
-        out.close();
-        return null;
     }
 }
