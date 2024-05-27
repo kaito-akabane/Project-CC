@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="auto" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>YJCC</title>
+        <link href="/styles/main.css" rel="stylesheet">
+        <link href="/styles/home.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <div th:replace="~{fragments/nav :: nav}"></div>
+            <div id="container">
+                <main>
+                    <h1>이름</h1>
+                </main>
+                <aside th:replace="~{fragments/profile :: profile(${session.login_user.getUsername()}, ${session.login_user.getName()})}"></aside>
+            </div>
+        </div>
+    <!--        <div th:text="${session.login_user.getName()}"></div>-->
+    <!--        <script src="/js/home.js"></script>-->
+    </body>
+</html>

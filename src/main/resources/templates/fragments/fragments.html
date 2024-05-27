@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <img th:fragment="logo(mode)" th:src="@{'/img/logo_'+${mode}+'.png'}" class="logo" alt="YJCC 로고">
+    </body>
+</html>

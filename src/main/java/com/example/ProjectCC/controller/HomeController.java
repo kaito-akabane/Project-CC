@@ -14,8 +14,13 @@ public class HomeController {
     @GetMapping(value = {"/", "home"})
     public String mainPage(HttpServletRequest request, Model model, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession(false);
-        if (session==null)
+        if (session==null||session.getAttribute("login_user")==null)
             return "redirect:/login";
         return "home";
+    }
+    
+    @GetMapping("home2")
+    public String home2(HttpServletRequest request, Model model, HttpServletResponse response) throws IOException {
+        return "home2";
     }
 }

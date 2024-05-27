@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <aside th:fragment="profile(username, name)">
+            <div id="profile">
+                <div class="propic-box">
+                    <img src="/img/pic.png" class="propic">
+                </div>
+                <div class="id_n_name">
+                    <div class="my_id" th:text="${username}">아이디</div>
+                    <span class="my_name" th:text="${name}">이름</span>
+                </div>
+                <div class="logout">
+                    <a href="logout">로그아웃</a>
+                </div>
+            </div>
+        </aside>
+    </body>
+</html>

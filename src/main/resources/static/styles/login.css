@@ -18,3 +18,7 @@ div#login {
     justify-content: center;
     align-items: center;
 }
+
+img.logo {
+    margin-bottom: 20px;
+}

@@ -10,7 +10,7 @@
     <body>
         <div class="flex-center h-100">
             <div id="join" class="container flex-center">
-                <img class="logo" src="/img/logo_light.png" alt="YJCC 로고">
+                <img th:replace="~{fragments :: logo(light)}">
                 <h2>회원가입</h2>
                 <form action="/join" method="post" name="join" onsubmit="return check()">
                     <div id="email">

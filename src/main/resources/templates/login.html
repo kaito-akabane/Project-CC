@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         <div class="flex-center h-100">
             <div id="login" class="container flex-center">
                 <div class="login">
-                    <img class="logo" src="/img/logo_light.png" alt="YJCC 로고">
+                    <img th:replace="~{fragments/fragments :: logo(light)}">
                     <form id="form" action="/login" method="post" name="login" onsubmit="return check()">
                         <input type="text" class="username" name="username" placeholder="ID" required/>
                         <input type="password" class="password" name="password" placeholder="비밀번호" required/>
