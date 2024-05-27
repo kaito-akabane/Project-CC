@@ -1,0 +1,57 @@
+content {
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.something {
+    width: 600px;
+    height: 800px;
+    border: 1px solid #dbdbdb;
+    /* background-color: white; */
+    border-radius: 3px;
+}
+
+aside {
+    padding: 30px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.propic-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    /* border: 1px solid gray; */
+    border-radius: 50%;
+    background-size: contain;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+img.propic {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.id_n_name {
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.my_name {
+    color: gray;
+}
+
+.logout {
+    margin-left: 10px;
+}

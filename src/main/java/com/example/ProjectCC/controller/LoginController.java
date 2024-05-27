@@ -2,7 +2,7 @@ package com.example.ProjectCC.controller;
 
 import com.example.ProjectCC.dto.LoginDto;
 import com.example.ProjectCC.entity.User;
-import com.example.ProjectCC.repository.UserRepository;
+import com.example.ProjectCC.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LoginController {
-    private final UserRepository userRepository;
+    private final UserService userService;
     
     @Autowired
-    public LoginController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public LoginController(UserService userService) {
+        this.userService = userService;
     }
     
     @GetMapping("login")
@@ -30,13 +30,11 @@ public class LoginController {
     @PostMapping("login")
     public String login(LoginDto loginDto, HttpServletResponse response, HttpServletRequest request)
             throws IOException {
-        User user = userRepository.findByUsername(loginDto.getUsername());
+        User user = userService.login(loginDto);
         if(user!=null) {
-            if(loginDto.getPassword().equals(user.getPassword())) {
-                HttpSession session = request.getSession();
-                session.setAttribute("login_user", user);
-                return "redirect:/home";
-            }
+            HttpSession session = request.getSession();
+            session.setAttribute("login_user", user);
+            return "redirect:/home";
         }
         //로그인 실패
         response.setCharacterEncoding("utf-8");

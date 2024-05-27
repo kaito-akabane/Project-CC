@@ -1,8 +1,10 @@
 package com.example.ProjectCC.service;
 
+import com.example.ProjectCC.dto.LoginDto;
 import com.example.ProjectCC.dto.RegisterDto;
 import com.example.ProjectCC.entity.User;
 import com.example.ProjectCC.repository.UserRepository;
+import com.example.ProjectCC.security.Encrypt;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,12 +20,19 @@ public class UserService {
         else {
             User user = new User();
             user.setUsername(registerDto.getUsername());
-            user.setPassword(registerDto.getPassword());
+            user.setPassword(Encrypt.encrypt(registerDto.getPassword()));
             user.setName(registerDto.getName());
-            user.setEmail(registerDto.getEmail());
+            user.setEmail(registerDto.getEmail()+"@g.yju.ac.kr");
             userRepository.save(user);
             return true;
         }
+    }
+    
+    public User login(LoginDto loginDto) {
+        User user = userRepository.findByUsername(loginDto.getUsername());
+        if(user!=null&&user.getPassword().equals(Encrypt.encrypt(loginDto.getPassword())))
+            return user;
+        return null;
     }
     
 //    public List<User> findAll() {
